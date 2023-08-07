@@ -18,3 +18,13 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name
     - name: Run BMI
       run: docker run my-image-name
+
+      # Notify on failures
+    - name: Notify on failures
+      if: ${{ failure() }}
+      run: echo "There were some errors or issues in the CI process."
+
+      # Notify on success
+    - name: Notify on success
+      if: ${{ success() }}
+      run: echo "CI process completed successfully."
