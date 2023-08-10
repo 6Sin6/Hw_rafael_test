@@ -23,7 +23,6 @@ jobs:
     - name: Notify on failures
       if: ${{ failure() }}
       run: echo "There were some errors or issues in the CI process."
-
       # Notify on success
     - name: Notify on success
       if: ${{ success() }}
