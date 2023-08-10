@@ -16,8 +16,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build -t bmi .
-    - name: Run BMI
-      run: docker run bmi
 
       # Notify on failures
     - name: Notify on failures
